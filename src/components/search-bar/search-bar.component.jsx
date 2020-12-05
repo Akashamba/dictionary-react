@@ -1,23 +1,15 @@
 import React from "react";
+import {withRouter} from 'react-router';
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
+// const handleSubmit = (event, props) => {
+//   event.preventDefault();
+//   // props.history.push(event.target[0].value)
+// }
 
-    this.state = {
-      state_var: ""
-    };
-  }
+const SearchBar = (props) => (
+  <form onSubmit={(event) => props.history.push(event.target[0].value)}>
+    <input type="search" />
+  </form>
+)
 
-  // componentDidMount() {
-  //   fetch("https://wordsapiv1.p.mashape.com/words/example")
-  //     .then((result) => result.json())
-  //     .then((result) => console.log(result));
-  // }
-
-  render() {
-    return <input type="search" />;
-  }
-}
-
-export default SearchBar;
+export default withRouter(SearchBar);
