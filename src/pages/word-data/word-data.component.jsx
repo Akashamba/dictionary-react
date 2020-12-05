@@ -10,6 +10,7 @@ class Result extends React.Component {
   }
 
   getMeaning = (word) => {
+    console.log(word)
     fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
     .then((result) => result.json())
     .then((result) => this.setState({data: result}));
@@ -21,7 +22,7 @@ class Result extends React.Component {
 
   componentDidUpdate(prevProps) {
     if(this.props.match.params !== prevProps.match.params) {
-      this.getMeaning(this.props.match.params);
+      this.getMeaning(this.props.match.params.word);
     }
   }
 
