@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from './components/search-bar/search-bar.component';
 import Result from './pages/word-data/word-data.component';
-import Homepage from "./pages/homepage/homepage.component";
+// import Homepage from "./pages/homepage/homepage.component";
 import { Switch, Route } from 'react-router-dom';
 import "./styles.css";
 
