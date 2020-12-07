@@ -3,10 +3,11 @@ import {withRouter} from 'react-router';
 
 const SearchBar = (props) => (
   <form onSubmit={(event) => {
-    event.preventDefault()
-    props.history.push(event.target[0].value)
+    event.preventDefault();
+    props.history.push(`/word/${event.target[0].value.toLowerCase()}`);
+    event.target[0].value = '';
     }}>
-    <input type="search" />
+    <input type="search" autoFocus/>
   </form>
 )
 

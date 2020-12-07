@@ -10,8 +10,7 @@ class Result extends React.Component {
   }
 
   getMeaning = (word) => {
-    console.log(word)
-    fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
+    fetch(`https://n9t6g.sse.codesandbox.io/api/${word}`)
     .then((result) => result.json())
     .then((result) => this.setState({data: result}));
   }
@@ -30,9 +29,10 @@ class Result extends React.Component {
     if(this.state.data.error)
         return(<div>{this.state.data.error}</div>)
     if(this.state.data.results)
-      return(
+      return(<div>
         <div>{this.state.data.word}: {this.state.data.results[0].definitions[0]}</div>
-      )
+      <div>{JSON.stringify(this.state.data)}</div>
+      </div>)
     return(<div></div>)
   }
 }
