@@ -1,17 +1,10 @@
-import React from "react";
-import SearchBar from "../../components/search-bar/search-bar.component";
-import SearchResults from "../../components/search-results/search-results.component";
+import React from 'react';
 
-class Homepage extends React.Component {
-
-  render() {
-    return (
-      <div className="homepage">
-        <SearchBar />
-        <SearchResults />
-      </div>
-    );
-  }
+export default function Homepage() {
+  return (
+    <div className='homepage'>
+      <h1>Welcome</h1>
+      <p>Powered by Oxford API</p>
+    </div>
+  )
 }
-
-export default Homepage;
