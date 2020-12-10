@@ -13,7 +13,8 @@ class Result extends React.Component {
 
   getMeaning = (word) => {
     this.setState({data: {}})
-    fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
+    // fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
+    fetch('https://my-json-server.typicode.com/Akashamba/dictionary-react/api')
     .then((result) => result.json())
     .then((result) => this.setState({data: result[0]}));
   }
@@ -34,11 +35,21 @@ class Result extends React.Component {
     if(this.state.data.results) {
       const { definitions, examples, synonyms } = this.state.data.results[0];
       let example_list = [];
+      let synonym_list = [];
+
       examples.map(array => {
         array.map(array => {
           example_list.push(array.text)
+          return null
         })
+        return null
       })
+
+      synonyms.map(array => {
+        console.log(array)
+        return null
+      })
+      
       return(
         <div>
           <br />
@@ -48,6 +59,8 @@ class Result extends React.Component {
           <Carousel data={definitions} />
           <br /><br /><br />
           <Carousel data={example_list} />
+          <br /><br /><br />
+          <Carousel data={synonym_list} />
         </div>
         
      )
