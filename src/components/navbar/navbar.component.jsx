@@ -23,10 +23,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = ({ history, prefersDarkMode, setTheme }) => {
   const classes = useStyles();
+  const bg = prefersDarkMode
+  ?'linear-gradient(to right, #303030 0%, #303030 100%)'
+  :'linear-gradient(to right, #3f6cfe 0%, #00f2fe 100%)';
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundImage: 'linear-gradient(to right, #3f6cfe 0%, #00f2fe 100%)' }}>
+      <AppBar position="static" style={{ backgroundImage: bg }}>
         <Toolbar>
           <Typography onClick={() => history.push('/')} variant="h5" className={classes.title}>
             Dictionary
