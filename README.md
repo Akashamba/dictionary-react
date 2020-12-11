@@ -1,2 +1,5 @@
-# dictionary-react
-Created with CodeSandbox
+# Material Dictionary App
+A simple and clean looking dictionary build using React JS and Node JS with Material UI.
+Built completely on CodeSandbox.
+
+https://simple-dictionary.netlify.app/
