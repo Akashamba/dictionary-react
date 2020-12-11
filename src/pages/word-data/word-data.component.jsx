@@ -13,11 +13,10 @@ class Result extends React.Component {
 
   getMeaning = (word) => {
     this.setState({data: {}})
-    // fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
-    fetch('https://my-json-server.typicode.com/Akashamba/dictionary-react/api')
+    fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
     .then((result) => result.json())
     .then((result) => this.setState(
-      {data: result[Math.floor(Math.random() * 3)]}
+      {data: result}
     ));
   }
 
