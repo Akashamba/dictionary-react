@@ -1,18 +1,30 @@
-import React from "react";
+import React, {useState} from "react";
 import SearchBar from './components/search-bar/search-bar.component';
 import Result from './pages/word-data/word-data.component';
 import Homepage from "./pages/homepage/homepage.component";
 import Navbar from './components/navbar/navbar.component';
-// import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { Switch, Route, /*Link*/ } from 'react-router-dom';
+import { Switch, Route,  } from 'react-router-dom';
 import "./styles.css";
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 export default function App() {
+  const [prefersDarkMode, setTheme] = useState(true);
+  const theme = React.useMemo(
+    () =>
+      createMuiTheme({
+        palette: {
+          type: prefersDarkMode ? 'dark' : 'light',
+        },
+      }),
+    [prefersDarkMode],
+  );
+
   return (
-    <div className="App">
-      {/* <Link to='/'>Simple Dictionary</Link> */}
-      <Navbar />
+    <ThemeProvider theme={theme}>
+      <CssBaseline/>
+      <Navbar prefersDarkMode={prefersDarkMode} setTheme={setTheme} />
       <br />
       <Container>
         <SearchBar />
@@ -21,7 +33,7 @@ export default function App() {
           <Route exact path='/word/:word' component={Result} />
           <Route component={Homepage} />
         </Switch>
-      </Container>
-    </div>
+      </Container>    
+    </ThemeProvider>
   );
 }

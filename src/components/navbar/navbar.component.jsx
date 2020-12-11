@@ -2,11 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-// import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 import { withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = ({ history }) => {
+const Navbar = ({ history, prefersDarkMode, setTheme }) => {
   const classes = useStyles();
 
   return (
@@ -33,9 +31,9 @@ const Navbar = ({ history }) => {
           <Typography onClick={() => history.push('/')} variant="h5" className={classes.title}>
             Dictionary
           </Typography>
-          {/* <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton> */}
+          <IconButton edge="end" onClick={() => {setTheme(!prefersDarkMode)}} >
+            <Brightness4Icon />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </div>

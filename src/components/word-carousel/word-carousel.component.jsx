@@ -21,8 +21,11 @@ const useStyles = makeStyles((theme) => ({
   header: {
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: theme.palette.background.default,
+    // backgroundColor: theme.palette.text.disabled,
   },
+  stepper: {
+    backgroundColor: theme.palette.background.paper,
+  }
 }));
 
 function Carousel({ data }) {
@@ -49,6 +52,7 @@ function Carousel({ data }) {
         steps={maxSteps}
         position="static"
         variant="text"
+        className={classes.stepper}
         activeStep={activeStep}
         nextButton={
           <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
