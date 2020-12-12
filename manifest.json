@@ -1,0 +1,14 @@
+{
+  "name": "Dictionary",
+  "description": "An app to get you meanings of words aling with synonyms and examples",
+  "icons": [
+    {
+      "src": "/public/favicon.ico",
+      "type": "image/ico",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "minimal-ui"
+}

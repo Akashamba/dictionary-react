@@ -6,12 +6,13 @@ import Navbar from './components/navbar/navbar.component';
 import Container from '@material-ui/core/Container';
 import { Switch, Route,  } from 'react-router-dom';
 import "./styles.css";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 export default function App() {
-  const x = window.matchMedia('prefers-color-scheme: dark').matches; 
-  const [prefersDarkMode, setTheme] = useState(x)
+  // const x = useMediaQuery('(prefers-color-scheme: dark)'); 
+  const [prefersDarkMode, setTheme] = useState(true)
   const theme = React.useMemo(
     () =>
       createMuiTheme({
