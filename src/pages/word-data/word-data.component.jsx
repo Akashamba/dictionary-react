@@ -63,7 +63,7 @@ class Result extends React.Component {
         
      )
     }
-    return(<p className='word'>Loading...</p>)
+    return(<p className='loading'>Connecting...</p>)
   }
 }
 

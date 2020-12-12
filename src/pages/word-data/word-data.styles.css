@@ -8,6 +8,12 @@
   text-align: center;
 }
 
+.loading {
+  padding-top: 4rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
 * {
   -webkit-animation: fadein 0.7s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: fadein 0.7s; /* Firefox < 16 */
