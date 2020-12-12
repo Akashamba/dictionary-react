@@ -51,7 +51,7 @@ class Result extends React.Component {
       return(
         <div>
           <br />
-          <h1 id='word'>{this.state.data.word}</h1>
+          <h1 className='word'>{this.state.data.word}</h1>
           <br />
           <br />
           <Carousel data={definitions} />
@@ -63,7 +63,7 @@ class Result extends React.Component {
         
      )
     }
-    return(<div></div>)
+    return(<p className='word'>Loading...</p>)
   }
 }
 
