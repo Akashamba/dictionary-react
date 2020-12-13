@@ -6,7 +6,7 @@ import Navbar from './components/navbar/navbar.component';
 import Container from '@material-ui/core/Container';
 import { Switch, Route,  } from 'react-router-dom';
 import "./styles.css";
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Footer from './components/footer/footer.component';
