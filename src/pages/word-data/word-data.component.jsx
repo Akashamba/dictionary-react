@@ -32,6 +32,7 @@ class Result extends React.Component {
   }
 
   render() {
+    console.log('synonyms pending')
     if(this.state.data.error)
         return(
           <div className='error'>
