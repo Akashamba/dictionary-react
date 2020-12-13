@@ -33,33 +33,23 @@ class Result extends React.Component {
 
   render() {
     if(this.state.data.error)
-        return(<div className='error'>{this.state.data.error}</div>)
-    if(this.state.data.results) {
+        return(
+          <div className='error'>
+            <p style={{ textAlign: 'center' }}>No Results Found for "{this.props.match.params.word}"</p>
+            <p>Tip: Try using the root form of words, like "run", instead of "ran"</p>
+          </div>
+        )
+    if(this.state.data.senses) {
       // const { definitions, examples, synonyms } = this.state.data.results[0];
-      const { definitions } = this.state.data.results[0];
-      let example_list = [];
-      let synonym_list = [];
-
-      // examples.map(arr => {
-      //   console.log(arr)
-      // })
-
-      // synonyms.map(array => {
-      //   // console.log(array)
-      //   return null
-      // })
-      
+      const { senses, synonyms, pronunciation } = this.state.data;
       return(
         <div>
           <br />
           <h1 className='word'>{this.state.data.word}</h1>
           <br />
           <br />
-          <Carousel data={definitions} />
+          <Carousel senses={senses} />
           <br /><br /><br />
-          <Carousel data={example_list} />
-          <br /><br /><br />
-          <Carousel data={synonym_list} />
         </div>
      )
     }
