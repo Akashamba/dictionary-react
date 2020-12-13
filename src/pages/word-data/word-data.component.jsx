@@ -14,7 +14,8 @@ class Result extends React.Component {
 
   getMeaning = (word) => {
     this.setState({data: {}})
-    fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
+    // fetch(`https://dictionary-backend-node.herokuapp.com/api/${word}`)
+    fetch(`https://n9t6g.sse.codesandbox.io/api/${word}`)
     .then((result) => result.json())
     .then((result) => this.setState(
       {data: result}
@@ -32,7 +33,6 @@ class Result extends React.Component {
   }
 
   render() {
-    console.log('synonyms pending')
     if(this.state.data.error)
         return(
           <div className='error'>
@@ -42,7 +42,8 @@ class Result extends React.Component {
         )
     if(this.state.data.senses) {
       // const { definitions, examples, synonyms } = this.state.data.results[0];
-      const { senses, synonyms, pronunciation } = this.state.data;
+      // const { senses, synonyms, pronunciation } = this.state.data;
+      const {senses} = this.state.data
       return(
         <div>
           <br />
