@@ -9,6 +9,7 @@ import "./styles.css";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Footer from './components/footer/footer.component';
 
 export default function App() {
   // const x = useMediaQuery('(prefers-color-scheme: dark)'); 
@@ -35,7 +36,8 @@ export default function App() {
           <Route exact path='/word/:word' component={Result} />
           <Route component={Homepage} />
         </Switch>
-      </Container>    
+      </Container>  
+      <Footer theme={prefersDarkMode} />  
     </ThemeProvider>
   );
 }

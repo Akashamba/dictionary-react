@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from '../../components/word-carousel/word-carousel.component';
+import { ReactComponent as Search } from '../../assets/search.svg';
 import './word-data.styles.css';
 
 class Result extends React.Component {
@@ -60,10 +61,9 @@ class Result extends React.Component {
           <br /><br /><br />
           <Carousel data={synonym_list} />
         </div>
-        
      )
     }
-    return(<p className='loading'>Connecting...</p>)
+    return(<div><br /><br/><Search /><p className='loading'>Searching...</p></div>)
   }
 }
 
