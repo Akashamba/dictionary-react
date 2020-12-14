@@ -6,6 +6,7 @@ export default function Synonyms({synonyms}) {
   <Paper>
     <br/>
     <Container>
+      <h2>{synonyms.length>1?'Synonyms':'Synonym'}</h2>
       {synonyms.map(synonym => (
         <span style={{fontSize: '1.15rem'}} >
               {synonym}, &nbsp; </span>
