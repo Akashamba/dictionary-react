@@ -47,7 +47,7 @@ class Result extends React.Component {
         <div>
           <br />
           <h1 className='word'>{this.state.data.word}</h1>
-          <br /><br />
+          <br />
           <Carousel senses={senses} />
           <br /><br /><br />
           <Synonyms synonyms={synonyms} />

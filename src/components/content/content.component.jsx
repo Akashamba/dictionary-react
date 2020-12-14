@@ -6,8 +6,9 @@ export default function Content({sense}) {
     <Container>
       {sense.category?
       <div>
-        <h2>Category</h2>
-        <p style={{ fontSize: '1.15rem'}}>{sense.category}</p>
+        <br/>
+        <h2 style={{display: 'inline'}}>Category: </h2>
+        <span style={{ fontSize: '1.15rem'}}> {sense.category}</span>
         <br/>
       </div>
       :''}
