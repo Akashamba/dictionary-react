@@ -1,11 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import {AppBar, Toolbar, Typography, IconButton} from '@material-ui/core';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
   title: {  
     flexGrow: 1,
     textAlign: 'left',
-    cursor: 'pointer',
+    color: '#fff', 
+    textDecoration: 'none',
   },
 }));
 
@@ -31,8 +29,8 @@ const Navbar = ({ history, prefersDarkMode, setTheme }) => {
     <div className={classes.root}>
       <AppBar position="static" style={{ backgroundImage: bg }}>
         <Toolbar>
-          <Typography onClick={() => history.push('/')} variant="h5" className={classes.title}>
-            Dictionary
+          <Typography variant="h5" className={classes.title}>
+            <Link className={classes.title} to='/'>Dictionary</Link>
           </Typography>
           <IconButton edge="end" onClick={() => {setTheme(!prefersDarkMode)}} >
             <Brightness4Icon />

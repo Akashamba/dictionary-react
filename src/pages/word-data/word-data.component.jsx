@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from '../../components/word-carousel/word-carousel.component';
+import Synonyms from '../../components/synonyms/synonyms.component'
 import { ReactComponent as Search } from '../../assets/search.svg';
 import './word-data.styles.css';
 
@@ -40,9 +41,8 @@ class Result extends React.Component {
           </div>
         )
     if(this.state.data.senses) {
-      // const { definitions, examples, synonyms } = this.state.data.results[0];
       // const { senses, synonyms, pronunciation } = this.state.data;
-      const {senses} = this.state.data
+      const {senses, synonyms} = this.state.data
       return(
         <div>
           <br />
@@ -51,6 +51,7 @@ class Result extends React.Component {
           <br />
           <Carousel senses={senses} />
           <br /><br /><br />
+          <Synonyms synonyms={synonyms} />
         </div>
      )
     }
