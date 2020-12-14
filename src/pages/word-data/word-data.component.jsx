@@ -50,7 +50,8 @@ class Result extends React.Component {
           <br />
           <Carousel senses={senses} />
           <br /><br /><br />
-          <Synonyms synonyms={synonyms} />
+          {synonyms.length>0?<Synonyms synonyms={synonyms} />:''}
+          
         </div>
      )
     }
