@@ -6,8 +6,7 @@ export default function Homepage() {
     <div className='homepage'>
       <h1 style={{textAlign: 'center'}} >Dictionary</h1>
       <p style={{textAlign: 'center'}} >Type a word to get started</p>
-      <br />
-      
+      <br /><br /><br /><br />
     </div>
   )
 }
