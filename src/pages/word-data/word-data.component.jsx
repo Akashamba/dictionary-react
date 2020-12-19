@@ -43,7 +43,7 @@ class Result extends React.Component {
         const {word} = this.props.match.params;
         return(
           <div className='error'>
-            <p style={{ textAlign: 'center' }}>No Results Found for <span style={{cursor: 'pointer'}} onClick={() => this.handleClick(word)}>"{word}"</span></p>
+            <p style={{ textAlign: 'center' }}>No Results Found for <span style={{cursor: 'pointer', textDecoration: 'underline'}} onClick={() => this.handleClick(word)}>"{word}"</span></p>
             <p>Tip: Try using the root form of words, like "run", instead of "ran"</p>
           </div>
         )
@@ -53,7 +53,7 @@ class Result extends React.Component {
       return(
         <div>
           <br />
-          <h1 className='word'>{this.state.data.word} <Pronunciation url={pronunciation} /> </h1>
+          <h1 className='word'>{this.state.data.word} {pronunciation?<Pronunciation url={pronunciation} />:''} </h1>
           <br />
           <Carousel senses={senses} />
           <br /><br /><br />
