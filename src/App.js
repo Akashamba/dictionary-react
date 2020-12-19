@@ -8,7 +8,7 @@ import { Switch, Route,  } from 'react-router-dom';
 import "./styles.css";
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import {CssBaseline, Hidden} from '@material-ui/core';
 import Footer from './components/footer/footer.component';
 
 export default function App() {
@@ -30,7 +30,9 @@ export default function App() {
       <Navbar prefersDarkMode={prefersDarkMode} setTheme={setTheme} />
       <br />
       <Container>
-        <SearchBar />
+        <Hidden mdUp>
+          <SearchBar />
+        </Hidden>
         <Switch>
           <Route exact path='/' component={Homepage} />
           <Route exact path='/word/:word' component={Result} />
