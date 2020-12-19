@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from '../../components/word-carousel/word-carousel.component';
 import Synonyms from '../../components/synonyms/synonyms.component'
+import Pronunciation from '../../components/pronunciation/pronunciation.component';
 import { ReactComponent as Search } from '../../assets/search.svg';
 import './word-data.styles.css';
 
@@ -32,21 +33,27 @@ class Result extends React.Component {
     }
   }
 
+  handleClick = (word) => {
+    document.getElementsByTagName("input")[0].focus();
+    document.getElementsByTagName("input")[0].value=word;
+  }
+
   render() {
-    if(this.state.data.error)
+    if(this.state.data.error){
+        const {word} = this.props.match.params;
         return(
           <div className='error'>
-            <p style={{ textAlign: 'center' }}>No Results Found for "{this.props.match.params.word}"</p>
+            <p style={{ textAlign: 'center' }}>No Results Found for <span style={{cursor: 'pointer'}} onClick={() => this.handleClick(word)}>"{word}"</span></p>
             <p>Tip: Try using the root form of words, like "run", instead of "ran"</p>
           </div>
         )
+    }
     if(this.state.data.senses) {
-      // const { senses, synonyms, pronunciation } = this.state.data;
-      const {senses, synonyms} = this.state.data
+      const { senses, synonyms, pronunciation } = this.state.data;
       return(
         <div>
           <br />
-          <h1 className='word'>{this.state.data.word}</h1>
+          <h1 className='word'>{this.state.data.word} <Pronunciation url={pronunciation} /> </h1>
           <br />
           <Carousel senses={senses} />
           <br /><br /><br />

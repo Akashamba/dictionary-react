@@ -6,6 +6,10 @@ import {Link} from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
   synonym: {
     color: theme.palette.text.primary,
+  },
+  linkWrapper: {
+    fontSize: '1.15rem',
+    padding: '0 15px 0 0',
   }
 }));
 
@@ -17,11 +21,13 @@ export default function Synonyms({synonyms}) {
     <br/>
     <Container>
       <h2>{synonyms.length>1?'Synonyms':'Synonym'}</h2>
-      {synonyms.map(synonym => (
-        <span style={{fontSize: '1.15rem'}} >
-              <Link to={`/word/${synonym}`} className={classes.synonym}>
-              {synonym}</Link>, &nbsp; </span>
-      ))}
+      <p style={{textAlign: 'center'}}>
+        {synonyms.map(synonym => (
+          <span className={classes.linkWrapper} >
+                <Link to={`/word/${synonym}`} className={classes.synonym}>
+                {synonym}</Link> </span>
+        ))}
+      </p>
     </Container>
     <br/>
   </Paper>
