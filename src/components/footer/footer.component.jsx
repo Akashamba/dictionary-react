@@ -16,7 +16,7 @@ export default function Footer({theme}) {
         <p>Find me here</p>
         <p><Link style={{ color: color }} href="https://github.com/akashamba"><i id="github" className="fab fa-github"></i></Link> &emsp; <Link style={{ color: color }} href="https://in.linkedin.com/in/akash-ambashankar-48b8111b7"><i id="linkedin" className="fab fa-linkedin"></i></Link></p>
         <br/>
-        <p style={{fontSize: '0.5rem'}}>v 1.1</p>
+        <p style={{fontSize: '0.5rem'}}>v 1.2</p>
         <br/>
   </Paper>
     </div>
